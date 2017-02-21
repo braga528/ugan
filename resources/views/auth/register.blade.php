@@ -1,21 +1,5 @@
 @extends('layouts.app')
 
-<meta name="csrf-token" content="{{ csrf_token() }}" />
-<!-- Scripts -->
-<script>
-    window.Laravel = <?php echo json_encode([
-        'csrfToken' => csrf_token(),
-    ]); ?>
-</script>
-<script>
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-</script>
-</script>
 @section('content')
 <section style="background-image: url('../../ugan/public/img/register_bg.png');  background-size: auto">
     <div class="container"  >
@@ -73,6 +57,7 @@
                                 </div>
                             </div>
                             <div class="col s12 m6 l6">
+                                <!--
                                 <div class="input-field col s12 m12 l12">
                                     <select id="state" name="state" required>
                                         <option value="" disabled selected>Selecciona tu Estado</option>
@@ -111,6 +96,8 @@
                                     </select>
                                     <label>Estado</label>
                                 </div>
+                                -->
+                                <!--
                                 <div class="input-field col s12 m12 l12">
                                     <select id="profile" name="profile" required>
                                         <option value="" disabled selected>Seleciona tu perfil</option>
@@ -122,7 +109,13 @@
                                     </select>
                                     <label>Perfil</label>
                                 </div>
-
+                                -->
+                                <input type="hidden" name="state" value="Yucatán">
+                                <input type="hidden" name="profile" value="Otro">
+                                <input type="hidden" name="number_colm" value="1">
+                                <input type="hidden" name="upp" value="test">
+                                <input type="hidden" name="patent" value="Test">
+                                <input type="hidden" name="honey_type" value="Test">
                                 <div class="input-field col s12 m12 l12">
                                     <input id="password" name="password" type="password" class="validate" required>
                                     <label for="password">Contraseña</label>
@@ -135,8 +128,8 @@
 
 
                                 <div class="input-field col s12 m12 l12">
-                                    <input id="password" type="password" class="validate" required>
-                                    <label for="password">Confirmar contraseña</label>
+                                    <input id="password-confirm" name="password_confirmation" type="password" class="validate" required>
+                                    <label for="password-confirm">Confirmar contraseña</label>
                                 </div>
 
                                 <div class="form-group">

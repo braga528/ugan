@@ -32,6 +32,11 @@ class CreateUsersTable extends Migration
         });
     }
 
+    function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
+
     /**
      * Reverse the migrations.
      *
